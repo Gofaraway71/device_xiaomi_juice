@@ -4,7 +4,7 @@
 
 load_citrus()
 {
-    resetprop "ro.product.model" "Pocophone M3"
+    resetprop "ro.product.model" "POCO M3"
     resetprop "ro.product.name" "citrus"
     resetprop "ro.build.product" "citrus"
     resetprop "ro.product.device" "citrus"
@@ -13,23 +13,15 @@ load_citrus()
 
 load_lime()
 {
-    resetprop "ro.product.model" "Redmi 9 Power"
+    lime_model_prop=$(getprop ro.product.model)
+    resetprop "ro.product.model" "$lime_model_prop"
     resetprop "ro.product.name" "lime"
     resetprop "ro.build.product" "lime"
     resetprop "ro.product.device" "lime"
     resetprop "ro.vendor.product.device" "lime"
 }
 
-load_pomelo()
-{
-    resetprop "ro.product.model" "Redmi 9T"
-    resetprop "ro.product.name" "pomelo"
-    resetprop "ro.build.product" "pomelo"
-    resetprop "ro.product.device" "pomelo"
-    resetprop "ro.vendor.product.device" "pomelo"
-}
-
-
+load_lime
 
 project=$(getprop ro.boot.product.hardware.sku)
 echo $project
@@ -37,12 +29,6 @@ echo $project
 case $project in
     "citrus")
         load_citrus
-        ;;
-    "lime")
-        load_lime
-        ;;
-    "pomelo")
-        load_pomelo
         ;;
     *)
 
