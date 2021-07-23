@@ -28,5 +28,5 @@ $(call inherit-product, device/xiaomi/juice/device.mk)
 PRODUCT_DEVICE := juice
 PRODUCT_NAME := omni_juice
 PRODUCT_BRAND := POCO
-PRODUCT_MODEL := Pocophone M3
+PRODUCT_MODEL := POCO M3
 PRODUCT_MANUFACTURER := Xiaomi
